@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import {connect} from "react-redux"
 
-export default class Todos extends Component {
+class Todos extends Component {
   render() {
     const {todos} = this.props
     return (
@@ -10,3 +11,9 @@ export default class Todos extends Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  todos: state.todos
+});
+
+export default connect(mapStateToProps)(Todos);
